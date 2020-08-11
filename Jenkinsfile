@@ -11,6 +11,11 @@ pipeline {
                 git credentialsId: 'vikas', url: 'https://github.com/Vikas3123/project2.git'
             }    
         }
+        stage('Maven') { 
+            steps {
+                sh label: '', script: 'mvn clean package'
+            }
+        }    
         stage('Test') { 
             steps {
                 echo "This is Test job"
